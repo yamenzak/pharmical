@@ -1,4 +1,11 @@
-export function LogoMark({ size = 40, className = "" }) {
+import { useState } from "react";
+
+/* ──────────────────────────────────────────────────────────────────────────
+   SVG fallbacks. If the user drops PNGs into /public/brand/, those win;
+   otherwise these SVGs render.
+   ────────────────────────────────────────────────────────────────────────── */
+
+function SvgMark({ size = 40, className = "" }) {
   return (
     <svg
       width={size}
@@ -22,16 +29,81 @@ export function LogoMark({ size = 40, className = "" }) {
   );
 }
 
-export function LogoWordmark({ className = "", color = "currentColor" }) {
+/**
+ * <LogoMark/> — the square gradient "M" icon.
+ * Renders /brand/logo-mark.png if present, otherwise the SVG fallback.
+ */
+export function LogoMark({ size = 40, className = "" }) {
+  const [errored, setErrored] = useState(false);
+  if (errored) return <SvgMark size={size} className={className} />;
   return (
-    <span className={`inline-flex items-center gap-2 ${className}`}>
-      <LogoMark size={32} />
-      <span
-        className="font-black tracking-tight text-[1.4rem] leading-none"
-        style={{ color }}
-      >
-        PHARMICAL
+    <img
+      src="/brand/logo-mark.png"
+      alt="Pharmical"
+      width={size}
+      height={size}
+      onError={() => setErrored(true)}
+      className={className}
+      style={{ width: size, height: size, objectFit: "contain" }}
+    />
+  );
+}
+
+/**
+ * <LogoWordmark/> — full mark + wordmark.
+ *   variant="auto"  → swaps based on parent `.dark` class (default)
+ *   variant="light" → forces wordmark for light backgrounds (dark text)
+ *   variant="dark"  → forces wordmark for dark backgrounds (white text)
+ */
+export function LogoWordmark({
+  height = 28,
+  variant = "auto",
+  className = "",
+}) {
+  if (variant === "auto") {
+    return (
+      <span className={`inline-flex items-center ${className}`}>
+        <span className="hidden dark:inline-flex">
+          <WordmarkImage variant="dark" height={height} />
+        </span>
+        <span className="inline-flex dark:hidden">
+          <WordmarkImage variant="light" height={height} />
+        </span>
       </span>
-    </span>
+    );
+  }
+  return <WordmarkImage variant={variant} height={height} className={className} />;
+}
+
+function WordmarkImage({ variant, height, className = "" }) {
+  const [errored, setErrored] = useState(false);
+  const src =
+    variant === "dark"
+      ? "/brand/logo-wordmark-dark.png"
+      : "/brand/logo-wordmark-light.png";
+
+  if (errored) {
+    return (
+      <span className={`inline-flex items-center gap-2 ${className}`}>
+        <SvgMark size={height} />
+        <span
+          className={`font-black tracking-tight leading-none ${
+            variant === "dark" ? "text-white" : "text-ink-900"
+          }`}
+          style={{ fontSize: height * 0.78 }}
+        >
+          PHARMICAL
+        </span>
+      </span>
+    );
+  }
+  return (
+    <img
+      src={src}
+      alt="Pharmical"
+      style={{ height, width: "auto" }}
+      onError={() => setErrored(true)}
+      className={className}
+    />
   );
 }

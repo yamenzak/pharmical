@@ -46,7 +46,7 @@ export default function HighFives() {
           <div>
             <SectionLabel kicker="The High Fives" />
             <Reveal>
-              <h2 className="mt-5 max-w-2xl text-4xl font-black tracking-tight text-white sm:text-5xl">
+              <h2 className="mt-5 max-w-2xl text-4xl font-black tracking-tight text-ink-900 dark:text-white sm:text-5xl">
                 Five reasons we get a{" "}
                 <span className="gradient-text">high-five</span> every time.
               </h2>
@@ -54,10 +54,10 @@ export default function HighFives() {
           </div>
           <Reveal delay={0.1}>
             <div className="relative">
-              <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-3xl">
+              <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-gray-200 bg-white text-3xl dark:border-white/10 dark:bg-white/[0.04]">
                 <Hand className="h-6 w-6 text-brand-pink" />
               </span>
-              <span className="absolute -inset-3 -z-10 rounded-3xl bg-brand-gradient opacity-20 blur-xl" />
+              <span className="absolute -inset-3 -z-10 rounded-3xl bg-brand-gradient opacity-15 blur-xl dark:opacity-20" />
             </div>
           </Reveal>
         </div>
@@ -77,18 +77,18 @@ export default function HighFives() {
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-gradient text-white shadow-glow-sm">
                   <f.icon className="h-5 w-5" />
                 </span>
-                <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-300">
+                <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-500 dark:text-ink-300">
                   HIGH 0{i + 1}
                 </span>
               </div>
-              <h3 className="mt-6 text-xl font-semibold text-white">
+              <h3 className="mt-6 text-xl font-semibold text-ink-900 dark:text-white">
                 {f.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-ink-200">
+              <p className="mt-3 text-sm leading-relaxed text-ink-600 dark:text-ink-200">
                 {f.body}
               </p>
               <div className="mt-6 h-px hairline" />
-              <div className="mt-4 flex items-center justify-between text-[11px] uppercase tracking-[0.18em] text-ink-300">
+              <div className="mt-4 flex items-center justify-between text-[11px] uppercase tracking-[0.18em] text-ink-500 dark:text-ink-300">
                 <span>Quality assured</span>
                 <span>·</span>
                 <span>Audited monthly</span>

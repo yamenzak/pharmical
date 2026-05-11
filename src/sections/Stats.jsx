@@ -51,13 +51,13 @@ function Stat({ v, suffix, label, small, idx }) {
       transition={{ duration: 0.55, delay: idx * 0.08 }}
       className="relative"
     >
-      <div className="text-5xl font-black tracking-tight text-white sm:text-6xl">
+      <div className="text-5xl font-black tracking-tight text-ink-900 dark:text-white sm:text-6xl">
         <span className="gradient-text">{n.toLocaleString()}</span>
-        <span className="text-white">{suffix}</span>
+        <span className="text-ink-900 dark:text-white">{suffix}</span>
       </div>
-      <div className="mt-2 text-sm font-medium text-ink-100">{label}</div>
+      <div className="mt-2 text-sm font-medium text-ink-800 dark:text-ink-100">{label}</div>
       {small && (
-        <div className="mt-0.5 text-xs uppercase tracking-[0.18em] text-ink-300">
+        <div className="mt-0.5 text-xs uppercase tracking-[0.18em] text-ink-500 dark:text-ink-300">
           {small}
         </div>
       )}

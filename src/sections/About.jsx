@@ -11,13 +11,13 @@ export default function About() {
           <div className="lg:col-span-5">
             <SectionLabel kicker="About Pharmical" />
             <Reveal>
-              <h2 className="mt-5 text-4xl font-black tracking-tight text-white sm:text-5xl">
+              <h2 className="mt-5 text-4xl font-black tracking-tight text-ink-900 dark:text-white sm:text-5xl">
                 A pharma supplier built for{" "}
                 <span className="gradient-text">today's demands.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
-              <p className="mt-6 text-lg leading-relaxed text-ink-200">
+              <p className="mt-6 text-lg leading-relaxed text-ink-600 dark:text-ink-200">
                 Established in 2021 and headquartered in Abu Dhabi, Pharmical
                 is a pharmaceuticals wholesale and distribution company serving
                 every region of the UAE — and beyond. We import from only the
@@ -57,23 +57,23 @@ export default function About() {
                         )}
                       </span>
                       <div>
-                        <div className="text-sm font-semibold text-white">
+                        <div className="text-sm font-semibold text-ink-900 dark:text-white">
                           {loc.city}
                           {loc.headquarters && (
-                            <span className="ml-2 rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] uppercase tracking-[0.18em] text-ink-200">
+                            <span className="ml-2 rounded-full border border-gray-200 bg-white px-2 py-0.5 text-[10px] uppercase tracking-[0.18em] text-ink-600 dark:border-white/10 dark:bg-white/5 dark:text-ink-200">
                               HQ
                             </span>
                           )}
                         </div>
-                        <div className="text-xs text-ink-300">{loc.code}</div>
+                        <div className="text-xs text-ink-500 dark:text-ink-300">{loc.code}</div>
                       </div>
                     </div>
-                    <span className="font-mono text-[10px] text-ink-300">
+                    <span className="font-mono text-[10px] text-ink-500 dark:text-ink-300">
                       {loc.geo}
                     </span>
                   </div>
 
-                  <p className="mt-4 text-sm leading-relaxed text-ink-200">
+                  <p className="mt-4 text-sm leading-relaxed text-ink-600 dark:text-ink-200">
                     {loc.desc}
                   </p>
 
@@ -81,7 +81,7 @@ export default function About() {
                     {loc.tags.map((t) => (
                       <span
                         key={t}
-                        className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] text-ink-200"
+                        className="rounded-full border border-gray-200 bg-white px-2.5 py-1 text-[11px] text-ink-600 dark:border-white/10 dark:bg-white/[0.04] dark:text-ink-200"
                       >
                         {t}
                       </span>
@@ -126,9 +126,9 @@ const locations = [
 
 function Stat({ n, l }) {
   return (
-    <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-4">
-      <dt className="text-xs uppercase tracking-[0.18em] text-ink-300">{l}</dt>
-      <dd className="mt-1 text-2xl font-black tracking-tight text-white">
+    <div className="rounded-2xl border border-gray-200/70 bg-white p-4 dark:border-white/[0.06] dark:bg-white/[0.02]">
+      <dt className="text-xs uppercase tracking-[0.18em] text-ink-500 dark:text-ink-300">{l}</dt>
+      <dd className="mt-1 text-2xl font-black tracking-tight text-ink-900 dark:text-white">
         {n}
       </dd>
     </div>
