@@ -23,10 +23,10 @@ const cols = [
   {
     title: "Contact",
     links: [
-      ["hello@pharmical.net", "mailto:hello@pharmical.net"],
-      ["sales@pharmical.net", "mailto:sales@pharmical.net"],
+      ["info@pharmical.net", "mailto:info@pharmical.net"],
       ["+971 50 821 7281", "tel:+971508217281"],
       ["M35 · Abu Dhabi", "https://maps.google.com/?q=Abu+Dhabi+M35"],
+      ["pharmical.net", "https://www.pharmical.net"],
     ],
   },
 ];
