@@ -10,9 +10,9 @@ export default function CallToAction() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7 }}
-          className="relative overflow-hidden rounded-[2rem] border border-white/10 p-10 sm:p-16"
+          className="relative overflow-hidden rounded-[2rem] border border-white/20 p-10 sm:p-16"
         >
-          <div className="absolute inset-0 -z-10 bg-brand-gradient opacity-90" />
+          <div className="absolute inset-0 -z-10 bg-brand-gradient" />
           <div
             className="absolute inset-0 -z-10 opacity-[0.12]"
             style={{
@@ -29,7 +29,7 @@ export default function CallToAction() {
 
           <div className="grid items-center gap-10 lg:grid-cols-12">
             <div className="lg:col-span-8">
-              <span className="pill border-white/30 bg-white/15 text-white">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-white backdrop-blur">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-white" />
                 Let us grow together
               </span>

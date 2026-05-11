@@ -34,17 +34,17 @@ const cols = [
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 mt-20 border-t border-white/[0.06] bg-ink-950/70 backdrop-blur">
+    <footer className="relative z-10 mt-20 border-t border-gray-200/70 bg-white/70 backdrop-blur dark:border-white/[0.06] dark:bg-ink-950/70">
       <div className="container-x py-16">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <div className="flex items-center gap-2.5">
               <LogoMark size={32} />
-              <span className="text-lg font-black tracking-tight text-white">
+              <span className="text-lg font-black tracking-tight text-ink-900 dark:text-white">
                 PHARMICAL
               </span>
             </div>
-            <p className="mt-5 max-w-md text-pretty text-sm leading-relaxed text-ink-200">
+            <p className="mt-5 max-w-md text-pretty text-sm leading-relaxed text-ink-600 dark:text-ink-200">
               The world-class wholesale distributor of top-quality
               pharmaceutical and medical disposable products — built for
               today's supply chain.
@@ -59,7 +59,7 @@ export default function Footer() {
           <div className="lg:col-span-7 grid grid-cols-2 gap-8 sm:grid-cols-3">
             {cols.map((c) => (
               <div key={c.title}>
-                <div className="text-xs font-semibold uppercase tracking-[0.22em] text-ink-300">
+                <div className="text-xs font-semibold uppercase tracking-[0.22em] text-ink-500 dark:text-ink-300">
                   {c.title}
                 </div>
                 <ul className="mt-5 space-y-3">
@@ -67,7 +67,7 @@ export default function Footer() {
                     <li key={l}>
                       <a
                         href={h}
-                        className="group inline-flex items-center gap-1.5 text-sm text-ink-100 hover:text-white"
+                        className="group inline-flex items-center gap-1.5 text-sm text-ink-700 hover:text-ink-900 dark:text-ink-100 dark:hover:text-white"
                       >
                         {l}
                         <ArrowUpRight className="h-3 w-3 -translate-y-px text-ink-400 opacity-0 transition-all group-hover:opacity-100" />
@@ -80,7 +80,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-white/[0.06] pt-8 text-xs text-ink-300 sm:flex-row sm:items-center">
+        <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-gray-200/70 pt-8 text-xs text-ink-500 dark:border-white/[0.06] dark:text-ink-300 sm:flex-row sm:items-center">
           <p>
             © {new Date().getFullYear()} Pharmical Pharmaceutical & Medical
             Supplies Company. All rights reserved.

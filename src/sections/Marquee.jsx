@@ -17,13 +17,13 @@ const items = [
 
 export default function Marquee() {
   return (
-    <section className="relative mt-24 sm:mt-32 border-y border-white/[0.06] bg-white/[0.015]">
+    <section className="relative mt-24 sm:mt-32 border-y border-gray-200/70 bg-white/40 dark:border-white/[0.06] dark:bg-white/[0.015]">
       <div className="mask-fade-both-x overflow-hidden py-5">
         <div className="flex w-max animate-marquee gap-10">
           {[...items, ...items].map((t, i) => (
             <div
               key={i}
-              className="flex items-center gap-3 whitespace-nowrap text-sm uppercase tracking-[0.22em] text-ink-300"
+              className="flex items-center gap-3 whitespace-nowrap text-sm uppercase tracking-[0.22em] text-ink-500 dark:text-ink-300"
             >
               <span className="inline-block h-1.5 w-1.5 rotate-45 bg-gradient-to-br from-brand-pink to-brand-indigo" />
               {t}

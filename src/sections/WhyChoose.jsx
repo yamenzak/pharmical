@@ -77,7 +77,7 @@ export default function WhyChoose() {
       <div className="container-x">
         <SectionLabel kicker="Why choose Pharmical" />
         <Reveal>
-          <h2 className="mt-5 max-w-3xl text-balance text-4xl font-black tracking-tight text-white sm:text-5xl">
+          <h2 className="mt-5 max-w-3xl text-balance text-4xl font-black tracking-tight text-ink-900 dark:text-white sm:text-5xl">
             The unfair advantages of being{" "}
             <span className="gradient-text">the supplier of today.</span>
           </h2>
@@ -94,29 +94,29 @@ export default function WhyChoose() {
                       onClick={() => setActive(i)}
                       className={`group relative flex w-full items-center gap-4 rounded-2xl border px-4 py-4 text-left transition-all duration-300 ${
                         isActive
-                          ? "border-white/10 bg-white/[0.04]"
-                          : "border-transparent hover:border-white/[0.06] hover:bg-white/[0.02]"
+                          ? "border-gray-200 bg-white dark:border-white/10 dark:bg-white/[0.04]"
+                          : "border-transparent hover:border-gray-200 hover:bg-white/60 dark:hover:border-white/[0.06] dark:hover:bg-white/[0.02]"
                       }`}
                     >
                       <span
                         className={`relative inline-flex h-10 w-10 items-center justify-center rounded-xl border transition-all duration-300 ${
                           isActive
                             ? "border-transparent bg-brand-gradient text-white shadow-glow-sm"
-                            : "border-white/10 bg-white/[0.03] text-ink-100"
+                            : "border-gray-200 bg-white text-ink-700 dark:border-white/10 dark:bg-white/[0.03] dark:text-ink-100"
                         }`}
                       >
                         <r.icon className="h-4 w-4" />
                       </span>
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center justify-between gap-3">
-                          <span className="text-base font-semibold text-white">
+                          <span className="text-base font-semibold text-ink-900 dark:text-white">
                             {r.title}
                           </span>
-                          <span className="hidden text-[10px] uppercase tracking-[0.18em] text-ink-300 sm:inline">
+                          <span className="hidden text-[10px] uppercase tracking-[0.18em] text-ink-500 dark:text-ink-300 sm:inline">
                             0{i + 1}
                           </span>
                         </div>
-                        <span className="mt-0.5 block truncate text-xs text-ink-300">
+                        <span className="mt-0.5 block truncate text-xs text-ink-500 dark:text-ink-300">
                           {r.badge}
                         </span>
                       </div>
@@ -149,10 +149,10 @@ export default function WhyChoose() {
                       {cur.badge}
                     </span>
                   </div>
-                  <h3 className="mt-5 text-3xl font-black tracking-tight text-white sm:text-4xl">
+                  <h3 className="mt-5 text-3xl font-black tracking-tight text-ink-900 dark:text-white sm:text-4xl">
                     {cur.title}
                   </h3>
-                  <p className="mt-4 max-w-xl text-pretty leading-relaxed text-ink-200">
+                  <p className="mt-4 max-w-xl text-pretty leading-relaxed text-ink-600 dark:text-ink-200">
                     {cur.body}
                   </p>
 
@@ -160,7 +160,7 @@ export default function WhyChoose() {
                     {cur.bullets.map((b) => (
                       <li
                         key={b}
-                        className="flex items-start gap-3 rounded-xl border border-white/[0.06] bg-white/[0.02] p-3 text-sm text-ink-100"
+                        className="flex items-start gap-3 rounded-xl border border-gray-200/70 bg-white p-3 text-sm text-ink-800 dark:border-white/[0.06] dark:bg-white/[0.02] dark:text-ink-100"
                       >
                         <span className="mt-1 inline-block h-1.5 w-1.5 flex-none rounded-full bg-gradient-to-br from-brand-pink to-brand-indigo" />
                         {b}
@@ -170,7 +170,7 @@ export default function WhyChoose() {
                 </motion.div>
               </AnimatePresence>
 
-              <div className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-brand-gradient opacity-20 blur-3xl" />
+              <div className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-brand-gradient opacity-15 blur-3xl dark:opacity-20" />
             </div>
           </div>
         </div>

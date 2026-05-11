@@ -51,14 +51,14 @@ export default function ProductRanges() {
           <div className="max-w-2xl">
             <SectionLabel kicker="Product Ranges" />
             <Reveal>
-              <h2 className="mt-5 text-4xl font-black tracking-tight text-white sm:text-5xl">
+              <h2 className="mt-5 text-4xl font-black tracking-tight text-ink-900 dark:text-white sm:text-5xl">
                 Six categories.{" "}
                 <span className="gradient-text">One vetted source.</span>
               </h2>
             </Reveal>
           </div>
           <Reveal delay={0.1}>
-            <p className="max-w-sm text-ink-200">
+            <p className="max-w-sm text-ink-600 dark:text-ink-200">
               Every product passes rigorous testing and quality checks before
               it's offered through Pharmical.
             </p>
@@ -77,21 +77,21 @@ export default function ProductRanges() {
               className="card group p-6"
             >
               <div className="flex items-center gap-3">
-                <span className="relative inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04]">
-                  <r.icon className="h-5 w-5 text-white" />
-                  <span className="absolute inset-0 rounded-xl bg-brand-gradient opacity-0 transition-opacity duration-500 group-hover:opacity-90" />
+                <span className="relative inline-flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-white/10 dark:bg-white/[0.04]">
+                  <r.icon className="h-5 w-5 text-ink-900 transition-opacity duration-500 group-hover:opacity-0 dark:text-white" />
+                  <span className="absolute inset-0 rounded-xl bg-brand-gradient opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <r.icon className="absolute h-5 w-5 text-white opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 </span>
-                <h3 className="text-lg font-semibold text-white">{r.name}</h3>
+                <h3 className="text-lg font-semibold text-ink-900 dark:text-white">{r.name}</h3>
               </div>
-              <p className="mt-4 text-sm leading-relaxed text-ink-200">
+              <p className="mt-4 text-sm leading-relaxed text-ink-600 dark:text-ink-200">
                 {r.desc}
               </p>
 
-              <div className="mt-6 flex items-center justify-between text-[11px] uppercase tracking-[0.18em] text-ink-300">
+              <div className="mt-6 flex items-center justify-between text-[11px] uppercase tracking-[0.18em] text-ink-500 dark:text-ink-300">
                 <span>0{i + 1} / 06</span>
                 <span className="inline-flex items-center gap-2">
-                  <span className="h-px w-8 bg-gradient-to-r from-transparent to-white/20" />
+                  <span className="h-px w-8 bg-gradient-to-r from-transparent to-ink-300 dark:to-white/20" />
                   Vetted
                 </span>
               </div>

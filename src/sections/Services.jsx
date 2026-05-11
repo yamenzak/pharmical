@@ -90,14 +90,14 @@ export default function Services() {
           <div>
             <SectionLabel kicker="Our Services" />
             <Reveal>
-              <h2 className="mt-5 text-4xl font-black tracking-tight text-white sm:text-5xl">
+              <h2 className="mt-5 text-4xl font-black tracking-tight text-ink-900 dark:text-white sm:text-5xl">
                 We're here to{" "}
                 <span className="gradient-text">help your business.</span>
               </h2>
             </Reveal>
           </div>
           <Reveal delay={0.1}>
-            <p className="text-ink-200">
+            <p className="text-ink-600 dark:text-ink-200">
               Pharmical is the first pharmaceutical supplier to provide
               on-demand services that help pharmacies reduce inventory costs,
               boost sales, and improve client satisfaction.
@@ -106,7 +106,7 @@ export default function Services() {
         </div>
 
         <div className="mt-14 overflow-x-auto">
-          <div className="flex min-w-max gap-2 rounded-full border border-white/[0.06] bg-white/[0.02] p-1.5">
+          <div className="flex min-w-max gap-2 rounded-full border border-gray-200/70 bg-white p-1.5 dark:border-white/[0.06] dark:bg-white/[0.02]">
             {services.map((s) => {
               const isActive = s.id === active;
               return (
@@ -114,7 +114,9 @@ export default function Services() {
                   key={s.id}
                   onClick={() => setActive(s.id)}
                   className={`relative inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium transition-colors ${
-                    isActive ? "text-white" : "text-ink-200 hover:text-white"
+                    isActive
+                      ? "text-white"
+                      : "text-ink-600 hover:text-ink-900 dark:text-ink-200 dark:hover:text-white"
                   }`}
                 >
                   {isActive && (
@@ -146,24 +148,24 @@ export default function Services() {
                   <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-gradient text-white shadow-glow-sm">
                     <cur.icon className="h-5 w-5" />
                   </span>
-                  <h3 className="mt-6 text-3xl font-black tracking-tight text-white sm:text-4xl">
+                  <h3 className="mt-6 text-3xl font-black tracking-tight text-ink-900 dark:text-white sm:text-4xl">
                     {cur.title}
                   </h3>
-                  <p className="mt-3 text-ink-200">{cur.short}</p>
-                  <p className="mt-5 max-w-2xl leading-relaxed text-ink-200/90">
+                  <p className="mt-3 text-ink-600 dark:text-ink-200">{cur.short}</p>
+                  <p className="mt-5 max-w-2xl leading-relaxed text-ink-600/90 dark:text-ink-200/90">
                     {cur.detail}
                   </p>
 
                   <a
                     href="mailto:services@pharmical.net"
-                    className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white"
+                    className="mt-8 inline-flex items-center gap-2 text-sm font-semibold"
                   >
                     <span className="gradient-text">Inquire about this service</span>
-                    <ArrowUpRight className="h-4 w-4" />
+                    <ArrowUpRight className="h-4 w-4 text-ink-900 dark:text-white" />
                   </a>
                 </motion.div>
               </AnimatePresence>
-              <div className="pointer-events-none absolute -right-32 -top-24 h-72 w-72 rounded-full bg-brand-gradient opacity-20 blur-3xl" />
+              <div className="pointer-events-none absolute -right-32 -top-24 h-72 w-72 rounded-full bg-brand-gradient opacity-15 blur-3xl dark:opacity-20" />
             </div>
           </div>
 
@@ -183,15 +185,15 @@ export default function Services() {
                     className="card p-5 flex items-start justify-between gap-4"
                   >
                     <div>
-                      <div className="text-xs uppercase tracking-[0.18em] text-ink-300">
+                      <div className="text-xs uppercase tracking-[0.18em] text-ink-500 dark:text-ink-300">
                         Highlight 0{i + 1}
                       </div>
-                      <div className="mt-1 text-lg font-semibold text-white">
+                      <div className="mt-1 text-lg font-semibold text-ink-900 dark:text-white">
                         {h.k}
                       </div>
-                      <div className="mt-1 text-sm text-ink-200">{h.v}</div>
+                      <div className="mt-1 text-sm text-ink-600 dark:text-ink-200">{h.v}</div>
                     </div>
-                    <span className="inline-flex h-7 w-7 flex-none items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-ink-200">
+                    <span className="inline-flex h-7 w-7 flex-none items-center justify-center rounded-full border border-gray-200 bg-white text-ink-600 dark:border-white/10 dark:bg-white/[0.04] dark:text-ink-200">
                       <ArrowUpRight className="h-3.5 w-3.5" />
                     </span>
                   </div>
