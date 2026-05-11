@@ -118,7 +118,7 @@ export default function Services() {
                 <button
                   key={s.id}
                   onClick={() => setActive(s.id)}
-                  className={`relative inline-flex items-center gap-2 rounded-full px-3.5 py-2.5 text-xs font-medium transition-colors sm:px-4 sm:text-sm ${
+                  className={`relative isolate inline-flex items-center gap-2 rounded-full px-3.5 py-2.5 text-xs font-medium transition-colors sm:px-4 sm:text-sm ${
                     isActive
                       ? "text-white"
                       : "text-ink-600 hover:text-ink-900 dark:text-ink-200 dark:hover:text-white"
@@ -163,7 +163,7 @@ export default function Services() {
                   </p>
 
                   <a
-                    href="mailto:services@pharmical.net"
+                    href="mailto:info@pharmical.net"
                     className="mt-6 inline-flex items-center gap-2 text-sm font-semibold sm:mt-8"
                   >
                     <span className="gradient-text">Inquire about this service</span>
