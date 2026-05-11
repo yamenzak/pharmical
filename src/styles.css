@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --grid-size: 56px;
+    --noise: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: #0A0A12;
+  }
+
+  body {
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(184, 71, 198, 0.15), transparent 60%),
+      radial-gradient(900px 500px at -10% 20%, rgba(229, 75, 122, 0.10), transparent 60%),
+      radial-gradient(900px 600px at 50% 110%, rgba(104, 73, 221, 0.18), transparent 60%),
+      #0A0A12;
+    background-attachment: fixed;
+    color: #E4E4F0;
+  }
+
+  ::selection {
+    background-color: rgba(184, 71, 198, 0.35);
+    color: #fff;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0A0A12;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #E54B7A, #6849DD);
+    border-radius: 999px;
+    border: 2px solid #0A0A12;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    background: linear-gradient(110deg, #E54B7A 0%, #B547C6 45%, #6849DD 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-6 lg:px-10;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-ink-200 backdrop-blur;
+  }
+
+  .pill-dot {
+    @apply inline-block h-1.5 w-1.5 rounded-full bg-gradient-to-br from-brand-pink to-brand-indigo;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply btn relative overflow-hidden text-white;
+    background-image: linear-gradient(110deg, #E54B7A 0%, #B547C6 50%, #6849DD 100%);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.25) inset,
+      0 10px 30px -10px rgba(184, 71, 198, 0.55);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.35) inset,
+      0 18px 40px -12px rgba(184, 71, 198, 0.75);
+  }
+
+  .btn-ghost {
+    @apply btn border border-white/10 bg-white/[0.04] text-ink-100 backdrop-blur hover:bg-white/[0.08];
+  }
+
+  .card {
+    @apply relative overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-xl;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.06) inset,
+      0 30px 60px -25px rgba(0, 0, 0, 0.55);
+  }
+
+  .card-glow::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(229, 75, 122, 0.4), rgba(104, 73, 221, 0.35) 60%, transparent);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.7;
+  }
+
+  .hairline {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  }
+
+  .glow-ring {
+    background: radial-gradient(closest-side, rgba(184, 71, 198, 0.45), transparent 70%);
+    filter: blur(40px);
+  }
+}
+
+@layer utilities {
+  .bg-noise {
+    background-image: var(--noise);
+    background-size: 160px 160px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .mask-fade-r {
+    -webkit-mask-image: linear-gradient(90deg, #000 70%, transparent);
+            mask-image: linear-gradient(90deg, #000 70%, transparent);
+  }
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent);
+            mask-image: linear-gradient(180deg, #000 60%, transparent);
+  }
+  .mask-fade-both-x {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  }
+}
