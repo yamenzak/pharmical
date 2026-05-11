@@ -40,13 +40,13 @@ const fives = [
 
 export default function HighFives() {
   return (
-    <section className="relative py-32">
+    <section className="relative py-20 sm:py-28 lg:py-32">
       <div className="container-x">
-        <div className="grid items-end justify-between gap-6 sm:flex">
+        <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-end sm:gap-6">
           <div>
             <SectionLabel kicker="The High Fives" />
             <Reveal>
-              <h2 className="mt-5 max-w-2xl text-4xl font-black tracking-tight text-ink-900 dark:text-white sm:text-5xl">
+              <h2 className="mt-5 max-w-2xl text-3xl font-black tracking-tight text-ink-900 dark:text-white sm:text-4xl lg:text-5xl">
                 Five reasons we get a{" "}
                 <span className="gradient-text">high-five</span> every time.
               </h2>
@@ -54,15 +54,15 @@ export default function HighFives() {
           </div>
           <Reveal delay={0.1}>
             <div className="relative">
-              <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-gray-200 bg-white text-3xl dark:border-white/10 dark:bg-white/[0.04]">
-                <Hand className="h-6 w-6 text-brand-pink" />
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-gray-200 bg-white dark:border-white/10 dark:bg-white/[0.04] sm:h-14 sm:w-14">
+                <Hand className="h-5 w-5 text-brand-pink sm:h-6 sm:w-6" />
               </span>
               <span className="absolute -inset-3 -z-10 rounded-3xl bg-brand-gradient opacity-15 blur-xl dark:opacity-20" />
             </div>
           </Reveal>
         </div>
 
-        <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-3 sm:mt-14 sm:gap-4 md:grid-cols-2 lg:grid-cols-3">
           {fives.map((f, i) => (
             <motion.div
               key={f.title}
@@ -71,24 +71,24 @@ export default function HighFives() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.55, delay: i * 0.06 }}
               whileHover={{ y: -4 }}
-              className="card group p-7"
+              className="card group p-5 sm:p-7"
             >
               <div className="flex items-start justify-between">
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-gradient text-white shadow-glow-sm">
                   <f.icon className="h-5 w-5" />
                 </span>
-                <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-500 dark:text-ink-300">
+                <span className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-ink-500 dark:text-ink-300 sm:text-[11px]">
                   HIGH 0{i + 1}
                 </span>
               </div>
-              <h3 className="mt-6 text-xl font-semibold text-ink-900 dark:text-white">
+              <h3 className="mt-5 text-lg font-semibold text-ink-900 dark:text-white sm:mt-6 sm:text-xl">
                 {f.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-ink-600 dark:text-ink-200">
+              <p className="mt-2.5 text-sm leading-relaxed text-ink-600 dark:text-ink-200 sm:mt-3">
                 {f.body}
               </p>
-              <div className="mt-6 h-px hairline" />
-              <div className="mt-4 flex items-center justify-between text-[11px] uppercase tracking-[0.18em] text-ink-500 dark:text-ink-300">
+              <div className="mt-5 h-px hairline sm:mt-6" />
+              <div className="mt-3.5 flex items-center justify-between text-[10.5px] uppercase tracking-[0.18em] text-ink-500 dark:text-ink-300 sm:mt-4 sm:text-[11px]">
                 <span>Quality assured</span>
                 <span>·</span>
                 <span>Audited monthly</span>

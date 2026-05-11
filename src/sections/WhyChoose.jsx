@@ -73,17 +73,17 @@ export default function WhyChoose() {
   const cur = reasons[active];
 
   return (
-    <section id="why" className="relative py-32">
+    <section id="why" className="relative py-20 sm:py-28 lg:py-32">
       <div className="container-x">
         <SectionLabel kicker="Why choose Pharmical" />
         <Reveal>
-          <h2 className="mt-5 max-w-3xl text-balance text-4xl font-black tracking-tight text-ink-900 dark:text-white sm:text-5xl">
+          <h2 className="mt-5 max-w-3xl text-balance text-3xl font-black tracking-tight text-ink-900 dark:text-white sm:text-4xl lg:text-5xl">
             The unfair advantages of being{" "}
             <span className="gradient-text">the supplier of today.</span>
           </h2>
         </Reveal>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-12">
+        <div className="mt-10 grid gap-5 sm:mt-14 lg:grid-cols-12 lg:gap-6">
           <div className="lg:col-span-5">
             <ul className="grid gap-2">
               {reasons.map((r, i) => {
@@ -92,14 +92,14 @@ export default function WhyChoose() {
                   <li key={r.title}>
                     <button
                       onClick={() => setActive(i)}
-                      className={`group relative flex w-full items-center gap-4 rounded-2xl border px-4 py-4 text-left transition-all duration-300 ${
+                      className={`group relative flex w-full items-center gap-3 rounded-2xl border px-3.5 py-3.5 text-left transition-all duration-300 sm:gap-4 sm:px-4 sm:py-4 ${
                         isActive
                           ? "border-gray-200 bg-white dark:border-white/10 dark:bg-white/[0.04]"
                           : "border-transparent hover:border-gray-200 hover:bg-white/60 dark:hover:border-white/[0.06] dark:hover:bg-white/[0.02]"
                       }`}
                     >
                       <span
-                        className={`relative inline-flex h-10 w-10 items-center justify-center rounded-xl border transition-all duration-300 ${
+                        className={`relative inline-flex h-10 w-10 flex-none items-center justify-center rounded-xl border transition-all duration-300 ${
                           isActive
                             ? "border-transparent bg-brand-gradient text-white shadow-glow-sm"
                             : "border-gray-200 bg-white text-ink-700 dark:border-white/10 dark:bg-white/[0.03] dark:text-ink-100"
@@ -109,7 +109,7 @@ export default function WhyChoose() {
                       </span>
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center justify-between gap-3">
-                          <span className="text-base font-semibold text-ink-900 dark:text-white">
+                          <span className="text-sm font-semibold text-ink-900 dark:text-white sm:text-base">
                             {r.title}
                           </span>
                           <span className="hidden text-[10px] uppercase tracking-[0.18em] text-ink-500 dark:text-ink-300 sm:inline">
@@ -134,7 +134,7 @@ export default function WhyChoose() {
           </div>
 
           <div className="lg:col-span-7">
-            <div className="card card-glow relative overflow-hidden p-7 sm:p-9">
+            <div className="card card-glow relative overflow-hidden p-6 sm:p-9">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={cur.title}
@@ -149,20 +149,20 @@ export default function WhyChoose() {
                       {cur.badge}
                     </span>
                   </div>
-                  <h3 className="mt-5 text-3xl font-black tracking-tight text-ink-900 dark:text-white sm:text-4xl">
+                  <h3 className="mt-4 text-2xl font-black tracking-tight text-ink-900 dark:text-white sm:mt-5 sm:text-4xl">
                     {cur.title}
                   </h3>
-                  <p className="mt-4 max-w-xl text-pretty leading-relaxed text-ink-600 dark:text-ink-200">
+                  <p className="mt-3 max-w-xl text-pretty text-sm leading-relaxed text-ink-600 dark:text-ink-200 sm:mt-4 sm:text-base">
                     {cur.body}
                   </p>
 
-                  <ul className="mt-8 grid gap-2 sm:grid-cols-2">
+                  <ul className="mt-6 grid gap-2 sm:mt-8 sm:grid-cols-2">
                     {cur.bullets.map((b) => (
                       <li
                         key={b}
                         className="flex items-start gap-3 rounded-xl border border-gray-200/70 bg-white p-3 text-sm text-ink-800 dark:border-white/[0.06] dark:bg-white/[0.02] dark:text-ink-100"
                       >
-                        <span className="mt-1 inline-block h-1.5 w-1.5 flex-none rounded-full bg-gradient-to-br from-brand-pink to-brand-indigo" />
+                        <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-none rounded-full bg-gradient-to-br from-brand-pink to-brand-indigo" />
                         {b}
                       </li>
                     ))}
