@@ -1,4 +1,4 @@
-import { LogoMark } from "../assets/logo-mark.jsx";
+import { LogoWordmark } from "../assets/logo-mark.jsx";
 import { ArrowUpRight } from "lucide-react";
 
 const cols = [
@@ -38,12 +38,8 @@ export default function Footer() {
       <div className="container-x py-16">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <div className="flex items-center gap-2.5">
-              <LogoMark size={32} />
-              <span className="text-lg font-black tracking-tight text-ink-900 dark:text-white">
-                PHARMICAL
-              </span>
-            </div>
+            <LogoWordmark height={38} />
+
             <p className="mt-5 max-w-md text-pretty text-sm leading-relaxed text-ink-600 dark:text-ink-200">
               The world-class wholesale distributor of top-quality
               pharmaceutical and medical disposable products — built for

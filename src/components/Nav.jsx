@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import { LogoMark } from "../assets/logo-mark.jsx";
+import { LogoWordmark } from "../assets/logo-mark.jsx";
 import ThemeToggle from "./ThemeToggle.jsx";
 
 const links = [
@@ -35,12 +35,9 @@ export default function Nav() {
             : "border-gray-200/60 bg-white/60 backdrop-blur-md dark:border-white/[0.08] dark:bg-white/[0.02]"
         }`}
       >
-        <a href="#top" className="flex items-center gap-2 pl-1 sm:gap-2.5">
-          <LogoMark size={28} className="sm:hidden" />
-          <LogoMark size={30} className="hidden sm:block" />
-          <span className="text-[0.95rem] font-black tracking-tight text-ink-900 dark:text-white sm:text-[1.05rem]">
-            PHARMICAL
-          </span>
+        <a href="#top" className="flex items-center pl-1" aria-label="Pharmical home">
+          <LogoWordmark height={26} className="sm:hidden" />
+          <LogoWordmark height={32} className="hidden sm:inline-flex" />
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">
