@@ -4,19 +4,19 @@ import Reveal from "../components/Reveal.jsx";
 
 export default function Values() {
   return (
-    <section className="relative py-28">
+    <section className="relative py-20 sm:py-24 lg:py-28">
       <div className="container-x">
-        <div className="grid items-start gap-12 lg:grid-cols-12">
+        <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">
             <SectionLabel kicker="Values · Vision · Mission" />
             <Reveal>
-              <h2 className="mt-5 text-4xl font-black tracking-tight text-ink-900 dark:text-white sm:text-5xl">
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-ink-900 dark:text-white sm:text-4xl lg:text-5xl">
                 Strict on safety.{" "}
                 <span className="gradient-text">Soft on access.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
-              <p className="mt-6 text-ink-600 leading-relaxed dark:text-ink-200">
+              <p className="mt-5 text-sm text-ink-600 leading-relaxed dark:text-ink-200 sm:mt-6 sm:text-base">
                 Pharmaceuticals is a high-risk industry. We uphold strict
                 policies surrounding storage, handling and distribution so the
                 people who depend on us never have to worry.
@@ -24,7 +24,7 @@ export default function Values() {
             </Reveal>
           </div>
 
-          <div className="lg:col-span-8 grid gap-4 md:grid-cols-3">
+          <div className="lg:col-span-8 grid gap-3 sm:gap-4 md:grid-cols-3">
             <Card
               icon={ShieldCheck}
               kicker="Our Values"
@@ -55,18 +55,18 @@ export default function Values() {
 
 function Card({ icon: Icon, kicker, title, body, accent }) {
   return (
-    <div className="card card-glow group relative overflow-hidden p-6">
+    <div className="card card-glow group relative overflow-hidden p-5 sm:p-6">
       <div
         className={`absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br opacity-25 blur-2xl transition-opacity duration-700 group-hover:opacity-50 dark:opacity-30 dark:group-hover:opacity-60 ${accent}`}
       />
       <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gradient text-white shadow-glow-sm">
         <Icon className="h-4 w-4" />
       </span>
-      <div className="mt-5 text-[11px] uppercase tracking-[0.22em] text-ink-500 dark:text-ink-300">
+      <div className="mt-4 text-[11px] uppercase tracking-[0.22em] text-ink-500 dark:text-ink-300 sm:mt-5">
         {kicker}
       </div>
-      <h3 className="mt-2 text-xl font-semibold text-ink-900 dark:text-white">{title}</h3>
-      <p className="mt-3 text-sm leading-relaxed text-ink-600 dark:text-ink-200">{body}</p>
+      <h3 className="mt-1.5 text-lg font-semibold text-ink-900 dark:text-white sm:mt-2 sm:text-xl">{title}</h3>
+      <p className="mt-2.5 text-sm leading-relaxed text-ink-600 dark:text-ink-200 sm:mt-3">{body}</p>
     </div>
   );
 }

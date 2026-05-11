@@ -5,14 +5,14 @@ const stats = [
   { v: 100, suffix: "+", label: "International manufacturers" },
   { v: 2625, suffix: "", label: "MOH License" },
   { v: 3, suffix: "", label: "Fulfillment centers", small: "AUH · DXB · SHJ" },
-  { v: 24, suffix: "/7", label: "Online live chat for partners" },
+  { v: 24, suffix: "/7", label: "Live chat for partners" },
 ];
 
 export default function Stats() {
   return (
-    <section className="relative py-24">
+    <section className="relative py-16 sm:py-24">
       <div className="container-x">
-        <div className="card card-glow grid gap-6 p-8 sm:grid-cols-2 sm:p-10 lg:grid-cols-4">
+        <div className="card card-glow grid gap-5 p-6 sm:p-10 sm:gap-6 grid-cols-2 lg:grid-cols-4">
           {stats.map((s, i) => (
             <Stat key={s.label} {...s} idx={i} />
           ))}
@@ -51,13 +51,13 @@ function Stat({ v, suffix, label, small, idx }) {
       transition={{ duration: 0.55, delay: idx * 0.08 }}
       className="relative"
     >
-      <div className="text-5xl font-black tracking-tight text-ink-900 dark:text-white sm:text-6xl">
+      <div className="text-3xl font-black tracking-tight text-ink-900 dark:text-white sm:text-5xl lg:text-6xl">
         <span className="gradient-text">{n.toLocaleString()}</span>
         <span className="text-ink-900 dark:text-white">{suffix}</span>
       </div>
-      <div className="mt-2 text-sm font-medium text-ink-800 dark:text-ink-100">{label}</div>
+      <div className="mt-1.5 text-xs font-medium text-ink-800 dark:text-ink-100 sm:mt-2 sm:text-sm">{label}</div>
       {small && (
-        <div className="mt-0.5 text-xs uppercase tracking-[0.18em] text-ink-500 dark:text-ink-300">
+        <div className="mt-0.5 text-[10.5px] uppercase tracking-[0.18em] text-ink-500 dark:text-ink-300 sm:text-xs">
           {small}
         </div>
       )}

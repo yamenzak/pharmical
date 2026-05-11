@@ -8,7 +8,7 @@ const links = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Why Pharmical", href: "#why" },
-  { label: "Partners", href: "#partners" },
+  { label: "Credentials", href: "#partners" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -29,14 +29,14 @@ export default function Nav() {
         initial={{ y: -24, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className={`flex w-full max-w-6xl items-center justify-between gap-2 rounded-2xl border px-2.5 py-2 sm:px-3 sm:py-2.5 transition-all duration-500 ${
+        className={`flex w-full max-w-6xl items-center justify-between gap-3 rounded-2xl border px-3 py-2 sm:px-4 sm:py-2.5 transition-all duration-500 ${
           scrolled
             ? "border-gray-200/80 bg-white/85 shadow-[0_10px_40px_-20px_rgba(15,15,26,0.18)] backdrop-blur-xl dark:border-white/[0.08] dark:bg-ink-950/75 dark:shadow-[0_10px_40px_-15px_rgba(0,0,0,0.6)]"
             : "border-gray-200/60 bg-white/60 backdrop-blur-md dark:border-white/[0.08] dark:bg-white/[0.02]"
         }`}
       >
-        <a href="#top" className="flex items-center pl-1" aria-label="Pharmical home">
-          <LogoWordmark height={26} className="sm:hidden" />
+        <a href="#top" className="flex items-center" aria-label="Pharmical home">
+          <LogoWordmark height={24} className="sm:hidden" />
           <LogoWordmark height={32} className="hidden sm:inline-flex" />
         </a>
 
@@ -56,18 +56,10 @@ export default function Nav() {
 
         <div className="flex items-center gap-1.5 sm:gap-2">
           <ThemeToggle />
-          <a
-            href="#contact"
-            className="btn-primary px-3.5 py-2 text-xs sm:px-5 sm:py-3"
-          >
-            <span className="hidden sm:inline">Start your conquest</span>
-            <span className="sm:hidden">Get started</span>
-            <ArrowUpRight className="h-3.5 w-3.5" />
-          </a>
           <button
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-ink-900 dark:border-white/10 dark:bg-white/5 dark:text-ink-100 md:hidden"
-            aria-label="Open menu"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-ink-900 transition-colors hover:bg-gray-50 dark:border-white/10 dark:bg-white/5 dark:text-ink-100 dark:hover:bg-white/[0.08] md:hidden"
+            aria-label={open ? "Close menu" : "Open menu"}
           >
             {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
@@ -80,7 +72,7 @@ export default function Nav() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="absolute inset-x-3 top-[68px] z-40 md:hidden sm:inset-x-4"
+            className="absolute inset-x-3 top-[64px] z-40 md:hidden sm:inset-x-4"
           >
             <div className="rounded-2xl border border-gray-200 bg-white p-3 shadow-2xl dark:border-white/10 dark:bg-ink-900/95 dark:backdrop-blur-xl">
               <ul className="grid gap-1">

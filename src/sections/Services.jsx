@@ -16,6 +16,7 @@ const services = [
     id: "wholesale",
     icon: Boxes,
     title: "Medical Supplies Wholesaler",
+    tab: "Wholesale",
     short: "The widest catalog at the lowest profit margin in the market.",
     detail:
       "Branded & generic drugs, OTC, natural products, nutritional supplements, veterinary products, and medical devices like catheters, implants, wound care, hearing aids, CPAPs and IV therapy equipment.",
@@ -29,6 +30,7 @@ const services = [
     id: "registration",
     icon: ClipboardCheck,
     title: "Product Registration",
+    tab: "Registration",
     short: "Manufacturer & product registration in the UAE — as a service.",
     detail:
       "Dedicated specialists handle consultations and paperwork to register your products with local authorities. Complimentary for partnered manufacturers, available as a standalone service for everyone else.",
@@ -42,6 +44,7 @@ const services = [
     id: "storage",
     icon: Warehouse,
     title: "Product Storage",
+    tab: "Storage",
     short: "Climate, PEST, cold-chain — done right, from AED 15/m³/month.",
     detail:
       "Storage facilities in Abu Dhabi, Dubai and Sharjah, approved by the Ministry of Health and respected health authorities. Rent a rack, skip the overhead.",
@@ -55,6 +58,7 @@ const services = [
     id: "distribution",
     icon: TruckIcon,
     title: "Product Distribution",
+    tab: "Distribution",
     short: "First-in-region same-day & next-day last-mile delivery.",
     detail:
       "Nation-wide UAE coverage with export services to any country via Free-Zones. Storage clients can opt into distribution to ship directly from our warehouses.",
@@ -68,6 +72,7 @@ const services = [
     id: "pharmacy",
     icon: Building2,
     title: "Pharmacy Management",
+    tab: "Pharmacy Mgmt.",
     short: "A to Z business development for start-ups and small pharmacies.",
     detail:
       "License assistance, shelving (up to 90% off Pharmical products), SaaS pharmacy management with optional HRM/CRM modules, online presence & e-commerce, marketing/SEO/SMM packages, plus discounted fulfillment.",
@@ -84,20 +89,20 @@ export default function Services() {
   const cur = services.find((s) => s.id === active);
 
   return (
-    <section id="services" className="relative py-32">
+    <section id="services" className="relative py-20 sm:py-28 lg:py-32">
       <div className="container-x">
-        <div className="grid items-end gap-6 lg:grid-cols-2">
+        <div className="grid items-end gap-5 sm:gap-6 lg:grid-cols-2">
           <div>
             <SectionLabel kicker="Our Services" />
             <Reveal>
-              <h2 className="mt-5 text-4xl font-black tracking-tight text-ink-900 dark:text-white sm:text-5xl">
+              <h2 className="mt-5 text-3xl font-black tracking-tight text-ink-900 dark:text-white sm:text-4xl lg:text-5xl">
                 We're here to{" "}
                 <span className="gradient-text">help your business.</span>
               </h2>
             </Reveal>
           </div>
           <Reveal delay={0.1}>
-            <p className="text-ink-600 dark:text-ink-200">
+            <p className="text-sm text-ink-600 dark:text-ink-200 sm:text-base">
               Pharmical is the first pharmaceutical supplier to provide
               on-demand services that help pharmacies reduce inventory costs,
               boost sales, and improve client satisfaction.
@@ -105,7 +110,7 @@ export default function Services() {
           </Reveal>
         </div>
 
-        <div className="mt-14 overflow-x-auto">
+        <div className="mt-10 -mx-6 overflow-x-auto px-6 sm:mt-14 mask-fade-both-x sm:mask-none">
           <div className="flex min-w-max gap-2 rounded-full border border-gray-200/70 bg-white p-1.5 dark:border-white/[0.06] dark:bg-white/[0.02]">
             {services.map((s) => {
               const isActive = s.id === active;
@@ -113,7 +118,7 @@ export default function Services() {
                 <button
                   key={s.id}
                   onClick={() => setActive(s.id)}
-                  className={`relative inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium transition-colors ${
+                  className={`relative inline-flex items-center gap-2 rounded-full px-3.5 py-2.5 text-xs font-medium transition-colors sm:px-4 sm:text-sm ${
                     isActive
                       ? "text-white"
                       : "text-ink-600 hover:text-ink-900 dark:text-ink-200 dark:hover:text-white"
@@ -127,16 +132,17 @@ export default function Services() {
                     />
                   )}
                   <s.icon className="h-4 w-4" />
-                  {s.title}
+                  <span className="sm:hidden">{s.tab}</span>
+                  <span className="hidden sm:inline">{s.title}</span>
                 </button>
               );
             })}
           </div>
         </div>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-12">
+        <div className="mt-8 grid gap-5 sm:mt-10 sm:gap-6 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <div className="card card-glow relative overflow-hidden p-8 sm:p-10">
+            <div className="card card-glow relative overflow-hidden p-6 sm:p-10">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={cur.id}
@@ -145,20 +151,20 @@ export default function Services() {
                   exit={{ opacity: 0, y: -14 }}
                   transition={{ duration: 0.35 }}
                 >
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-gradient text-white shadow-glow-sm">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-gradient text-white shadow-glow-sm sm:h-12 sm:w-12">
                     <cur.icon className="h-5 w-5" />
                   </span>
-                  <h3 className="mt-6 text-3xl font-black tracking-tight text-ink-900 dark:text-white sm:text-4xl">
+                  <h3 className="mt-5 text-2xl font-black tracking-tight text-ink-900 dark:text-white sm:mt-6 sm:text-4xl">
                     {cur.title}
                   </h3>
-                  <p className="mt-3 text-ink-600 dark:text-ink-200">{cur.short}</p>
-                  <p className="mt-5 max-w-2xl leading-relaxed text-ink-600/90 dark:text-ink-200/90">
+                  <p className="mt-3 text-sm text-ink-600 dark:text-ink-200 sm:text-base">{cur.short}</p>
+                  <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink-600/90 dark:text-ink-200/90 sm:mt-5 sm:text-base">
                     {cur.detail}
                   </p>
 
                   <a
                     href="mailto:services@pharmical.net"
-                    className="mt-8 inline-flex items-center gap-2 text-sm font-semibold"
+                    className="mt-6 inline-flex items-center gap-2 text-sm font-semibold sm:mt-8"
                   >
                     <span className="gradient-text">Inquire about this service</span>
                     <ArrowUpRight className="h-4 w-4 text-ink-900 dark:text-white" />
@@ -169,7 +175,7 @@ export default function Services() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 grid gap-4">
+          <div className="lg:col-span-5 grid gap-3 sm:gap-4">
             <AnimatePresence mode="wait">
               <motion.div
                 key={cur.id + "-h"}
@@ -177,18 +183,18 @@ export default function Services() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -14 }}
                 transition={{ duration: 0.35 }}
-                className="grid gap-3"
+                className="grid gap-3 sm:gap-4"
               >
                 {cur.highlights.map((h, i) => (
                   <div
                     key={h.k}
-                    className="card p-5 flex items-start justify-between gap-4"
+                    className="card flex items-start justify-between gap-4 p-4 sm:p-5"
                   >
                     <div>
-                      <div className="text-xs uppercase tracking-[0.18em] text-ink-500 dark:text-ink-300">
+                      <div className="text-[10.5px] uppercase tracking-[0.18em] text-ink-500 dark:text-ink-300 sm:text-xs">
                         Highlight 0{i + 1}
                       </div>
-                      <div className="mt-1 text-lg font-semibold text-ink-900 dark:text-white">
+                      <div className="mt-1 text-base font-semibold text-ink-900 dark:text-white sm:text-lg">
                         {h.k}
                       </div>
                       <div className="mt-1 text-sm text-ink-600 dark:text-ink-200">{h.v}</div>
